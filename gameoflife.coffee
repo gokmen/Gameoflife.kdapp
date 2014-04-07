@@ -61,9 +61,10 @@ class GameOfLife extends KDView
 
   createDot:(event, removeIfExists)->
 
-    {offsetX, offsetY} = event
-    x = offsetX / CELLSIZE | 0
-    y = offsetY / CELLSIZE | 0
+    event = event.originalEvent
+    {offsetX, offsetY, layerX, layerY} = event
+    x = (offsetX ? layerX) / CELLSIZE | 0
+    y = (offsetY ? layerY) / CELLSIZE | 0
 
     if @dotmap[y][x]
     then if removeIfExists then @rmDot x, y, yes

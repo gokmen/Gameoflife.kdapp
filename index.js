@@ -1,7 +1,7 @@
-/* Compiled by kdc on Mon Apr 07 2014 07:38:56 GMT+0000 (UTC) */
+/* Compiled by kdc on Mon Apr 07 2014 20:13:12 GMT+0000 (UTC) */
 (function() {
 /* KDAPP STARTS */
-/* BLOCK STARTS: gameoflife.coffee */
+/* BLOCK STARTS: /home/gokmen/Applications/Gameoflife.kdapp/gameoflife.coffee */
 var GameOfLife, _ref,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -86,17 +86,21 @@ GameOfLife = (function(_super) {
   };
 
   GameOfLife.prototype.createDot = function(event, removeIfExists) {
-    var offsetX, offsetY, x, y;
-    offsetX = event.offsetX, offsetY = event.offsetY;
-    x = offsetX / CELLSIZE | 0;
-    y = offsetY / CELLSIZE | 0;
+    var layerX, layerY, offsetX, offsetY, x, y;
+    event = event.originalEvent;
+    offsetX = event.offsetX, offsetY = event.offsetY, layerX = event.layerX, layerY = event.layerY;
+    x = (offsetX != null ? offsetX : layerX) / CELLSIZE | 0;
+    y = (offsetY != null ? offsetY : layerY) / CELLSIZE | 0;
     if (this.dotmap[y][x]) {
       if (removeIfExists) {
-        return this.rmDot(x, y, true);
+        this.rmDot(x, y, true);
       }
     } else {
-      return this.addDot(x, y, true);
+      this.addDot(x, y, true);
     }
+    return console.info({
+      event: event
+    });
   };
 
   GameOfLife.prototype.createCanvas = function() {
@@ -228,7 +232,7 @@ GameOfLife = (function(_super) {
   return GameOfLife;
 
 })(KDView);
-/* BLOCK STARTS: index.coffee */
+/* BLOCK STARTS: /home/gokmen/Applications/Gameoflife.kdapp/index.coffee */
 var GameoflifeController, GameoflifeMainView,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
