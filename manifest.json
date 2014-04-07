@@ -1,0 +1,33 @@
+{
+  "background": false,
+  "behavior": "application",
+  "version": "0.1",
+  "title": "Game of Life",
+  "name": "Gameoflife",
+  "identifier": "com.koding.apps.gameoflife",
+  "path": "~/Applications/Gameoflife.kdapp",
+  "homepage": "gokmen.kd.io/gameoflife",
+  "repository": "git://github.com/gokmen/gameoflife.kdapp.git",
+  "description": "Game of Life : The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. This is my hobby implementation with KD Framework and HTML5 <canvas>.",
+  "category": "web-app",
+  "source": {
+    "blocks": {
+      "app": {
+        "files": [
+          "./gameoflife.coffee",
+          "./index.coffee"
+        ]
+      }
+    },
+    "stylesheets": [
+      "./resources/style.css"
+    ]
+  },
+  "options": {
+    "type": "tab"
+  },
+  "icns": {
+    "128": "./resources/icon.128.png"
+  },
+  "fileTypes": []
+}

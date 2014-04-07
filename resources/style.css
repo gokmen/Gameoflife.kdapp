@@ -1,0 +1,43 @@
+.gameoflife.main-view {
+  background: white;
+  overflow: hidden;
+}
+
+.gameoflife .grid {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #ccc;
+  cursor: default;
+}
+
+.gameoflife .button-area {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width: auto;
+  background: rgba(0,0,0,.2);
+  padding:8px;
+  border-top-right-radius: 5px
+}
+.gameoflife .button-area .kdbutton {
+  font-weight: 500 !important;
+}
+  
+.gameoflife .log {
+  position: absolute;
+  width: auto;
+  right: 10px;
+  top: 0;
+}
+
+.gameoflife .log::selection {
+	background: #fff;
+}
+.gameoflife .log::-moz-selection {
+	background: #fff;
+}
+
+body.gameoflife .kdmodal p {
+  line-height: 20px;
+  margin-bottom: 10px; 
+}
