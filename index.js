@@ -1,7 +1,7 @@
-/* Compiled by kdc on Mon Apr 07 2014 20:13:12 GMT+0000 (UTC) */
+/* Compiled by kdc on Tue Apr 29 2014 01:10:24 GMT+0000 (UTC) */
 (function() {
 /* KDAPP STARTS */
-/* BLOCK STARTS: /home/gokmen/Applications/Gameoflife.kdapp/gameoflife.coffee */
+/* BLOCK STARTS: gameoflife.coffee */
 var GameOfLife, _ref,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -93,14 +93,11 @@ GameOfLife = (function(_super) {
     y = (offsetY != null ? offsetY : layerY) / CELLSIZE | 0;
     if (this.dotmap[y][x]) {
       if (removeIfExists) {
-        this.rmDot(x, y, true);
+        return this.rmDot(x, y, true);
       }
     } else {
-      this.addDot(x, y, true);
+      return this.addDot(x, y, true);
     }
-    return console.info({
-      event: event
-    });
   };
 
   GameOfLife.prototype.createCanvas = function() {
@@ -232,7 +229,7 @@ GameOfLife = (function(_super) {
   return GameOfLife;
 
 })(KDView);
-/* BLOCK STARTS: /home/gokmen/Applications/Gameoflife.kdapp/index.coffee */
+/* BLOCK STARTS: index.coffee */
 var GameoflifeController, GameoflifeMainView,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
